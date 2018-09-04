@@ -1,19 +1,16 @@
+/* ---=== Nav Bar ===--- */
+
 .nav-container {
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
     background-color: #e5e5e5;
     /* background-color: #928b81; */
-    margin: 10px;
+    margin: 1em;
     /* padding: 0 1em 0 1em; */
     font-size: 30px;
     border-bottom: 2em solid #a6a2a2;
 }
-
-
-/* .nav-container:hover {
-    color: #a6a2a2
-} */
 
 .nav-sub-1 {
     /* border: 1px solid black; */
@@ -65,4 +62,26 @@ input {
     width: 15em;
     height: 4em;
     border-radius: 1em;
+}
+
+
+/* ---=== Main Body ===--- */
+
+.main-container {
+    margin: 2em;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin: 3em 0;
+    background-color: #e5e5e5;
+}
+
+.img {
+    padding: 3em 0;
+}
+
+.img:hover {
+    cursor: pointer;
 }
