@@ -5,7 +5,7 @@ const client = igdb('6cc4d326021a2f7daf51bb674cd1ec46');
 let gameData = (func) => {
     client.games({
         fields: '*', // Return all fields
-        limit: 2, // Limit to 5 results
+        limit: 5, // Limit to 5 results
         // offset: 15 // Index offset for results
     }).then(response => {
         func(response.body);
@@ -14,8 +14,7 @@ let gameData = (func) => {
     });
 };
 
-
-
+module.exports.gameData = gameData;
 
 
 
@@ -65,8 +64,3 @@ let gameData = (func) => {
 // }).catch(error => {
 //     throw error;
 // });
-
-
-
-
-module.exports.gameData = gameData;

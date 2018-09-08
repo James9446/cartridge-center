@@ -1,15 +1,6 @@
-const identify = (e) => {
-    e.preventDefault();
-    var form = e.target;
-    var email = form["email"].value;
-    var fullname = form["fullname"].value;
-    var destination = form["destination"].value;
-    var details = form["details"].value;
-    var user = {
-        email: email,
-        name: fullname,
-        destination: destination,
-        details: details
-    };
-    console.log(user);
-}
+const cat = document.getElementById("demo").innerHTML;
+console.log(cat)
+    // main.appendChild('<h1>YaY!!!</h1>')
+    // console.log('testing');
+
+// console.log(document.getElementById("div-mc"));

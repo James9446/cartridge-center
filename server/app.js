@@ -6,6 +6,8 @@ const app = express();
 let path = require('path');
 
 const callAPI = require('./api.js');
+
+const template = require('./template.js');
 // console.log('test', gameData.gameData.getGames());
 // callAPI.gameData(console.log);
 // console.log('test');
@@ -24,7 +26,7 @@ app.get('/games', function(req, res) {
 });
 
 app.get('/snes', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public', 'snes.html'));
+    res.send(template.snes);
 });
 
 app.get('/n64', function(req, res) {
