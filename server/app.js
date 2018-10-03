@@ -1,37 +1,62 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-
+const hbs = require('hbs');
 const app = express();
 
 let path = require('path');
 
-const callAPI = require('./api.js');
+hbs.registerPartials(path.join(__dirname + './../views/partials'));
+app.set('view engine', 'hbs');
 
-const template = require('./template.js');
+// const callAPI = require('./api.js');
 // console.log('test', gameData.gameData.getGames());
 // callAPI.gameData(console.log);
-// console.log('test');
-// const snes = require('/../public/snes.html');
 
-// viewed at http://localhost:3000
-// app.get('/', function(req, res) {
-//     res.sendFile(path.join(__dirname + '../public/index.html'));
-// });
 
 app.use(express.static(path.join(__dirname, '../public')));
-// app.use(express.static(path.join(__dirname, '/../snes')));
 
-app.get('/games', function(req, res) {
-    callAPI.gameData((data) => res.send(data));
+
+hbs.registerHelper('isIndexActive', (page) => {
+  if (page === 'index') {
+    return 'active'
+  }
+  return null;
 });
 
-app.get('/snes', function(req, res) {
-    res.send(template.snes);
+hbs.registerHelper('isSnesActive', (page) => {
+  if (page === 'snes') {
+    return 'active'
+  }
+  return null;
 });
 
-app.get('/n64', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public', 'n64.html'));
+hbs.registerHelper('isN64Active', (page) => {
+  if (page === 'n64') {
+    return 'active'
+  }
+  return null;
 });
+
+app.get('/', (req, res) => {
+  res.render('index.hbs', {
+    page: 'index'
+  });
+});
+
+app.get('/snes', (req, res) => {
+  res.render('snes.hbs', {
+    page: 'snes'
+  });
+});
+
+app.get('/n64', (req, res) => {
+  res.render('n64.hbs', {
+    page: 'n64'
+  });
+});
+
+// app.get('/games', function(req, res) {
+//     callAPI.gameData((data) => res.send(data));
+// });
 
 app.listen(3000, function() {
     console.log('Server started and listening on port 3000');
