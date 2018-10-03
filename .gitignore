@@ -2,7 +2,7 @@
 .DS_Store
 
 ## NPM ##
-node_modules/git
+node_modules
 
 ## js ##
 public/js/analytics.js
