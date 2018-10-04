@@ -37,10 +37,29 @@ hbs.registerHelper('isN64Active', (page) => {
 });
 
 app.get('/', (req, res) => {
+  res.redirect('/nes');
+});
+
+app.get('/nes', (req, res) => {
   res.render('index.hbs', {
-    page: 'index'
+    page: 'index',
+    system: 'nes',
+    game1: 'mario',
+    game2: 'knight_rider',
+    game3: 'zelda',
+    game4: 'megaman',
+    game5: 'haunted',
+    game6: 'raccoons'
   });
 });
+
+// app.get('/nes/id', (req, res) => {
+//   res.send(You are the MAN!!!!!)
+  // res.render('game.hbs', {
+  //   page: id,
+  //   game: id
+  // });
+// });
 
 app.get('/snes', (req, res) => {
   res.render('snes.hbs', {
@@ -51,6 +70,14 @@ app.get('/snes', (req, res) => {
 app.get('/n64', (req, res) => {
   res.render('n64.hbs', {
     page: 'n64'
+  });
+});
+
+app.get('/nes/:id', (req, res, next) => {
+  // console.log('Request Type:', req.params.id);
+  res.render('game.hbs', {
+    page: req.params.id,
+    game: req.params.id
   });
 });
 
