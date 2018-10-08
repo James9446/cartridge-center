@@ -78,6 +78,11 @@ input {
   background-color: #e5e5e5;
 }
 
+.game {
+  display: flex;
+  justify-content: center;
+}
+
 .img {
   padding: 3em 0;
 }

@@ -2,22 +2,24 @@ if (!window.analytics) {
   console.log('analytics.js is currently commented out!');
 }
 
+let getData = (game) => {
+  let gameObject = {
+    name: game,
+    product_id: Math.random().toString().split('.')[1],
+    sku: Math.random().toString().split('.')[1],
+    category: 'Classic Video Games',
+    price: Math.round(Math.random() * 50) + .99 + '',
+    quantity: 1
+  }
+  return gameObject;
+};
+
 document.addEventListener('click', (event) => {
   console.log(event.target.id);
   let game = event.target.id;
-  // document.getElementById()
   if (game) {
-   
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        console.log(this)
-          document.getElementById("demo").innerHTML =
-          this.responseText;
-        }
-
-      xhttp.open("GET", "ajax_info.txt", true);
-      xhttp.send();
+    if (window.analytics) {
+      analytics.track('Product Clicked', getData(game));
     }
   }
 });
