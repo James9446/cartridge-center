@@ -15,7 +15,7 @@ let getData = (game) => {
 };
 
 document.addEventListener('click', (event) => {
-  console.log(event.target.id);
+  // console.log(event.target.id);
   let game = event.target.id;
   if (game) {
     if (window.analytics) {
