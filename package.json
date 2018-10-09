@@ -1,19 +1,19 @@
 {
-    "name": "cartridge_center",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server/app.js -e js,hbs"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.16.3",
-        "hbs": "^4.0.1",
-        "igdb-api-node": "^3.1.7",
-        "nodemon": "^1.18.4"
-    }
+  "name": "cartridge_center",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js",
+    "start-dev": "nodemon server/app.js -e js,hbs"
+  },
+  "keywords": [],
+  "author": "James Reynolds",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "nodemon": "^1.18.4"
+  }
 }
