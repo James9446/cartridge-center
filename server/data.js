@@ -11,8 +11,8 @@ let getData = (game, system) => {
   let gameObject = {
     game: game,
     system: system,
-    width:
-    height
+    width: width,
+    height: height
   }
   return gameObject;
 };
